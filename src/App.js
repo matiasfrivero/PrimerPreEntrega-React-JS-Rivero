@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// Esto seria el primer componente, todo el archivo App que se genera directamente con React
+
+// Tener en cuenta que muchos atributos seguiran siendo iguales que antes como id, pero por ejemplo, class pasara a ser className (ver en consola).
+
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hola mundoooo
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </>
   );
 }
 
