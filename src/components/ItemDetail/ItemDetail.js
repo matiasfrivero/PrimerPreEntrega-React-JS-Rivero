@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount"
 
-const Item = ({ id, name, img, price, stock }) => {
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
     return (
         <article className="box-border p-4 border-4 text-center mt-6 bg-zinc-300 mx-auto">
@@ -8,9 +8,15 @@ const Item = ({ id, name, img, price, stock }) => {
                 <h2 className="text-lg p-2">{name}</h2>
             </header>
             <picture>
-                <img className="h-60 w-96 m-auto object-cover" src={img} alt={name} />
+                <img className="h-96 w-96 m-auto object-cover" src={img} alt={name} />
             </picture>
             <section className="p-2">
+                <p>
+                    Categoria: {category}
+                </p>
+                <p>
+                    Descripcion: {description}
+                </p>
                 <p>
                     Precio: ${price}
                 </p>
@@ -25,10 +31,10 @@ const Item = ({ id, name, img, price, stock }) => {
                 <option value="41">41</option>
             </select>
             <footer>
-                <Link to={`/item/${id}`}>Ver Detalles</Link>
+            <ItemCount stock={10} onAdd={(contador) => console.log("Cantidad agregada", contador)} />
             </footer>
         </article>
     )
 }
 
-export default Item;
+export default ItemDetail;
